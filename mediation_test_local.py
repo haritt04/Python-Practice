@@ -5,7 +5,7 @@ import os
 
 # ======= CONFIGURATIONS =======
 SENDER_EMAIL = "mediationalert@gmail.com"  # Replace with your email
-EMAIL_PASSWORD = "wsbfjsstdsmetsef"   # Use Gmail App Password
+EMAIL_PASSWORD = ""   # Use Gmail App Password
 RECEIVER_EMAILS = [
     "harrynyinyi183@gmail.com",
     "harrynyinyi184@gmail.com",
