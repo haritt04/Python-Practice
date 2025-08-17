@@ -12,9 +12,9 @@ USERNAME = "ssh_username"
 PASSWORD = "ssh_password"
 REMOTE_PATH = "/path/"
 
-SENDER_EMAIL = "mediationalert@gmail.com"
-RECEIVER_EMAIL = ["harrynyinyi183@gmail.com","harrynyinyi184@gmail.com","nphyo.extl@ooredoo.com.mm"]
-EMAIL_PASSWORD = "wsbfjsstdsmetsef"   # Gmail App Password
+SENDER_EMAIL = "@gmail.com"
+RECEIVER_EMAIL = ["@gmail.com","@gmail.com"]
+EMAIL_PASSWORD = ""   # Gmail App Password
 
 # ========== TIME CHECK ==========
 now = datetime.datetime.now()
