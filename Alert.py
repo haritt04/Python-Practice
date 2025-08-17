@@ -2,13 +2,13 @@ import smtplib
 from email.message import EmailMessage
 
 # 1. Email Configuration
-sender_email = "mediationalert@gmail.com"
-receiver_email = "harrynyinyi183@gmail.com"
-app_password = "wsbfjsstdsmetsef"  # 🔐 Replace this with your Gmail App Password
+sender_email = ""
+receiver_email = ""
+app_password = ""  # Replace this with your Gmail App Password
 
 # 2. Create the Email
 msg = EmailMessage()
-msg['Subject'] = '🚨 Alert: File Missing in Mediation'
+msg['Subject'] = 'Alert: File Missing in Mediation'
 msg['From'] = sender_email
 msg['To'] = receiver_email
 
@@ -19,7 +19,7 @@ msg.set_content('No file was received in the last 30 minutes. Please investigate
 msg.add_alternative("""\
 <html>
   <body>
-    <h2 style="color:red;">🚨 Alert: File Missing!</h2>
+    <h2 style="color:red;">Alert: File Missing!</h2>
     <p>No files were received in the mediation folder at <strong>10:30 PM</strong>.</p>
     <p>Please check your system logs for more information.</p>
   </body>
@@ -35,7 +35,7 @@ try:
         msg.add_attachment(file_data, maintype="application", subtype="octet-stream", filename=file_name)
         print(f"📎 Attached log file: {file_name}")
 except FileNotFoundError:
-    print(f"⚠️ Log file '{log_filename}' not found — continuing without attachment.")
+    print(f"Log file '{log_filename}' not found — continuing without attachment.")
 
 # 4. Send the Email
 try:
@@ -44,9 +44,9 @@ try:
         smtp.starttls()
         smtp.login(sender_email, app_password)
         smtp.send_message(msg)
-        print("✅ Alert email sent successfully!")
+        print("Alert email sent successfully!")
 
 except smtplib.SMTPAuthenticationError:
-    print("❌ Authentication failed. Please check your email and app password.")
+    print("Authentication failed. Please check your email and app password.")
 except Exception as e:
-    print(f"❌ Failed to send email: {e}")
+    print(f"Failed to send email: {e}")
