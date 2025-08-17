@@ -1,0 +1,8 @@
+[2025-05-11 16:31:43] Exception during SSH: [Errno None] Unable to connect to port 22 on 127.0.0.1
+[2025-05-11 16:38:32] No file found with pattern BIEDW_CRM_INFOFFERS_20250511_*
+[2025-05-11 16:40:23] File BIEDW_CRM_INFOFFERS_20250511_.txt exists but size is 0 bytes.
+[2025-05-11 16:55:19] File BIEDW_CRM_INFOFFERS_20250511_.txt found with size 11 bytes.
+[2025-05-11 23:12:35] File BIEDW_CRM_INFOFFERS_20250511_.txt found with size 11 bytes.
+[2025-05-11 23:13:16] File BIEDW_CRM_INFOFFERS_20250511_.txt found with size 11 bytes.
+[2025-05-11 23:15:05] No file found with pattern BIEDW_CRM_INFOFFERS_20250511_**
+[2025-05-11 23:15:59] No file found with pattern BIEDW_CRM_INFOFFERS_20250511_*
