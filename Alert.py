@@ -1,21 +1,21 @@
 import smtplib
 from email.message import EmailMessage
 
-# 1. Email Configuration
+#Email Configuration
 sender_email = ""
 receiver_email = ""
 app_password = ""  # Replace this with your Gmail App Password
 
-# 2. Create the Email
+#Create the Email
 msg = EmailMessage()
 msg['Subject'] = 'Alert: File Missing in Mediation'
 msg['From'] = sender_email
 msg['To'] = receiver_email
 
-# Plain text version
+#Plain text version
 msg.set_content('No file was received in the last 30 minutes. Please investigate.')
 
-# HTML version
+#HTML version
 msg.add_alternative("""\
 <html>
   <body>
@@ -26,7 +26,7 @@ msg.add_alternative("""\
 </html>
 """, subtype='html')
 
-# 3. Attach Log File (if it exists)
+#Attach Log File (if it exists)
 log_filename = "log.txt"
 try:
     with open(log_filename, "rb") as file:
@@ -37,7 +37,7 @@ try:
 except FileNotFoundError:
     print(f"Log file '{log_filename}' not found — continuing without attachment.")
 
-# 4. Send the Email
+#Send the Email
 try:
     with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
         smtp.ehlo()
