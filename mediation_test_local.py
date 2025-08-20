@@ -4,18 +4,16 @@ import datetime
 import os
 
 # ======= CONFIGURATIONS =======
-SENDER_EMAIL = "mediationalert@gmail.com"  # Replace with your email
+SENDER_EMAIL = "@gmail.com"  # Replace with your email
 EMAIL_PASSWORD = ""   # Use Gmail App Password
 RECEIVER_EMAILS = [
-    "harrynyinyi183@gmail.com",
-    "harrynyinyi184@gmail.com",
-    "nphyo.extl@ooredoo.com.mm"
+    "@gmail.com",
+    "]@gmail.com"
 ]
 
-# ======= LOG FILE SETUP =======
 today = datetime.datetime.now()
 today_str = today.strftime("%Y%m%d")
-log_filename = f"mediation_test_log_{today_str}.log"
+log_filename = f"{today_str}.log"
 
 def log_result(message):
     with open(log_filename, 'a', encoding='utf-8') as f:
@@ -34,7 +32,7 @@ def send_email_alert(subject, body, attachment=None):
     msg.add_alternative(f"""
     <html>
       <body>
-        <h2 style='color:black;'>Mediation File Alert</h2>
+        <h2 style='color:black;'>File Alert</h2>
         <p>{body}</p>
       </body>
     </html>
@@ -55,16 +53,14 @@ def send_email_alert(subject, body, attachment=None):
     except Exception as e:
         print(f"Failed to send email: {e}")
 
-# ======= SIMULATED FILE CHECK (Local) =======
-# Change this flag to simulate success or failure
 simulate_success = False  # Set to True to simulate a success scenario
 
 if simulate_success: 
     result_message = "File found and size is valid."
-    subject = "Mediation File Successfully Received."
+    subject = "File Successfully Received."
 else:
     result_message = "File missing or empty."
-    subject = "Mediation File Missing or Empty."
+    subject = "File Missing or Empty."
 
 log_result(result_message)
 print(result_message)
